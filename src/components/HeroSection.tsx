@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import DemoModal from './DemoModal'
 
 interface HeroSectionProps {
   onGetStarted: () => void
@@ -10,6 +11,7 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
   const [animateIn, setAnimateIn] = useState(false)
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const [showDemo, setShowDemo] = useState(false)
 
   const heroTestimonials = [
     {
@@ -109,7 +111,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
               </button>
               
               <button
-                onClick={() => document.getElementById('demo-video')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => setShowDemo(true)}
                 className="group border border-gray-600 hover:border-gray-500 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-gray-800/50"
               >
                 <span className="flex items-center justify-center space-x-2">
@@ -229,6 +231,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
           </div>
         </div>
       </div>
+      
+      <DemoModal 
+        isOpen={showDemo} 
+        onClose={() => setShowDemo(false)} 
+      />
     </section>
   )
 }

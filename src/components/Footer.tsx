@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="md:col-span-2">
-            <img src="/logo.svg" alt="TestimonialCraft" className="h-8 w-auto mb-4" />
+            <img src="/logo.svg" alt="TestimonialCraft" className="h-12 w-auto mb-4" />
             <p className="text-gray-400 text-sm max-w-md">
               Create stunning testimonial widgets that convert visitors into customers. 
               Trusted by 10,000+ businesses worldwide.
@@ -22,10 +22,52 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Product</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#features" className="text-gray-400 hover:text-white transition-colors">Features</a></li>
-              <li><a href="#pricing" className="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
-              <li><a href="#examples" className="text-gray-400 hover:text-white transition-colors">Examples</a></li>
-              <li><a href="#api" className="text-gray-400 hover:text-white transition-colors">API</a></li>
+              <li>
+                <a 
+                  href="#features" 
+                  className="text-gray-400 hover:text-white transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                >
+                  Features
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#pricing" 
+                  className="text-gray-400 hover:text-white transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                >
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#examples" 
+                  className="text-gray-400 hover:text-white transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    document.getElementById('examples')?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                >
+                  Examples
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://github.com/yaghiashraf/testimonial-widget" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  API Documentation
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -33,10 +75,44 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">About</a></li>
-              <li><a href="#support" className="text-gray-400 hover:text-white transition-colors">Support</a></li>
-              <li><a href="#privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</a></li>
-              <li><a href="#terms" className="text-gray-400 hover:text-white transition-colors">Terms</a></li>
+              <li>
+                <a 
+                  href="https://github.com/yaghiashraf/testimonial-widget#readme" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="mailto:support@testimonialcraft.com" 
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Support
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.privacypolicies.com/live/testimonialcraft" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.termsandconditionstemplate.com/live/testimonialcraft" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Terms of Service
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -45,7 +121,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 pt-8 mt-12">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              © 2024 TestimonialCraft. All rights reserved.
+              © 2025 TestimonialCraft. All rights reserved.
             </p>
             
             {/* Social Proof */}

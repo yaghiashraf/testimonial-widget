@@ -29,14 +29,41 @@ const Header: React.FC<HeaderProps> = ({ isPaid, onUpgrade, isUpgrading }) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <img src="/logo.svg" alt="TestimonialCraft" className="h-8 w-auto" />
+            <img src="/logo.svg" alt="TestimonialCraft" className="h-12 w-auto" />
           </div>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
-            <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</a>
-            <a href="#examples" className="text-gray-300 hover:text-white transition-colors">Examples</a>
+            <a 
+              href="#features" 
+              className="text-gray-300 hover:text-white transition-colors font-medium hover:text-blue-400"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
+              Features
+            </a>
+            <a 
+              href="#pricing" 
+              className="text-gray-300 hover:text-white transition-colors font-medium hover:text-blue-400"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
+              Pricing
+            </a>
+            <a 
+              href="#examples" 
+              className="text-gray-300 hover:text-white transition-colors font-medium hover:text-blue-400"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById('examples')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
+              Examples
+            </a>
           </nav>
 
           {/* CTA */}

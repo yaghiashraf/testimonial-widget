@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import HeroSection from '../components/HeroSection'
 import FeaturesSection from '../components/FeaturesSection'
+import PricingSection from '../components/PricingSection'
+import ExamplesSection from '../components/ExamplesSection'
 import TestimonialBuilder from '../components/TestimonialBuilder'
 import Footer from '../components/Footer'
 import { createCheckoutSession } from '../lib/stripe'
+import { enforceHTTPS, auditLog } from '../lib/security'
 
 const HomePage: React.FC = () => {
   const [isPaid, setIsPaid] = useState(false)
@@ -12,6 +15,16 @@ const HomePage: React.FC = () => {
   const [showBuilder, setShowBuilder] = useState(false)
 
   useEffect(() => {
+    // Enforce HTTPS in production
+    enforceHTTPS()
+    
+    // Initialize security audit
+    auditLog.log('APP_INITIALIZED', { 
+      userAgent: navigator.userAgent,
+      timestamp: new Date().toISOString(),
+      url: window.location.href
+    })
+    
     setIsPaid(localStorage.getItem('paid') === 'true')
   }, [])
 
@@ -51,6 +64,14 @@ const HomePage: React.FC = () => {
       />
       
       <FeaturesSection />
+      
+      <PricingSection 
+        onUpgrade={handleUpgrade}
+        isUpgrading={isUpgrading}
+        isPaid={isPaid}
+      />
+      
+      <ExamplesSection />
       
       {(showBuilder || isPaid) && (
         <TestimonialBuilder scrollToBuilder={showBuilder && !isPaid} />
