@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import TestimonialForm from './TestimonialForm'
 import ThemePicker from './ThemePicker'
 import CarouselPreview from './CarouselPreview'

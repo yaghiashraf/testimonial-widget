@@ -1,4 +1,3 @@
-import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import TestimonialBuilder from './components/TestimonialBuilder'
 import Success from './pages/Success'
