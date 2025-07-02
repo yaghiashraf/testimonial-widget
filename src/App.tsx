@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import TestimonialBuilder from './components/TestimonialBuilder'
+import HomePage from './pages/HomePage'
 import Success from './pages/Success'
 import Cancel from './pages/Cancel'
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <Routes>
-        <Route path="/" element={<TestimonialBuilder />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/success" element={<Success />} />
         <Route path="/cancel" element={<Cancel />} />
       </Routes>
