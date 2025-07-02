@@ -1,11 +1,17 @@
+import { Link, useLocation } from 'react-router-dom'
+
 const Footer: React.FC = () => {
+  const location = useLocation()
+  const isHomePage = location.pathname === '/'
   return (
     <footer className="bg-gray-900 border-t border-gray-800 mt-20">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="md:col-span-2">
-            <img src="/logo.svg" alt="TestimonialCraft" className="h-12 w-auto mb-4" />
+            <Link to="/">
+              <img src="/logo.svg" alt="TestimonialCraft" className="h-12 w-auto mb-4 hover:opacity-80 transition-opacity" />
+            </Link>
             <p className="text-gray-400 text-sm max-w-md">
               Create stunning testimonial widgets that convert visitors into customers. 
               Trusted by 10,000+ businesses worldwide.
@@ -22,50 +28,63 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Product</h3>
             <ul className="space-y-2 text-sm">
+              {isHomePage ? (
+                <>
+                  <li>
+                    <a 
+                      href="#features" 
+                      className="text-gray-400 hover:text-white transition-colors"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })
+                      }}
+                    >
+                      Features
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="#pricing" 
+                      className="text-gray-400 hover:text-white transition-colors"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })
+                      }}
+                    >
+                      Pricing
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="#examples" 
+                      className="text-gray-400 hover:text-white transition-colors"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        document.getElementById('examples')?.scrollIntoView({ behavior: 'smooth' })
+                      }}
+                    >
+                      Examples
+                    </a>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <Link to="/" className="text-gray-400 hover:text-white transition-colors">
+                    Widget Builder
+                  </Link>
+                </li>
+              )}
               <li>
-                <a 
-                  href="#features" 
-                  className="text-gray-400 hover:text-white transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                >
-                  Features
-                </a>
+                <Link to="/faq" className="text-gray-400 hover:text-white transition-colors">
+                  FAQ
+                </Link>
               </li>
               <li>
                 <a 
-                  href="#pricing" 
-                  className="text-gray-400 hover:text-white transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                >
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#examples" 
-                  className="text-gray-400 hover:text-white transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    document.getElementById('examples')?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                >
-                  Examples
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://github.com/yaghiashraf/testimonial-widget" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                  href="mailto:support@testimonialcraft.com" 
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  API Documentation
+                  Get Support
                 </a>
               </li>
             </ul>
@@ -76,42 +95,44 @@ const Footer: React.FC = () => {
             <h3 className="text-white font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a 
-                  href="https://github.com/yaghiashraf/testimonial-widget#readme" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <Link 
+                  to="/about" 
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   About
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/faq" 
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  FAQ
+                </Link>
               </li>
               <li>
                 <a 
                   href="mailto:support@testimonialcraft.com" 
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Support
+                  Contact Support
                 </a>
               </li>
               <li>
-                <a 
-                  href="https://www.privacypolicies.com/live/testimonialcraft" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <Link 
+                  to="/privacy" 
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
-                  href="https://www.termsandconditionstemplate.com/live/testimonialcraft" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <Link 
+                  to="/terms" 
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Terms of Service
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

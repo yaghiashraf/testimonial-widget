@@ -26,5 +26,5 @@
   
   <!-- Text -->
   <text x="50" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="url(#logoGradient)">TestimonialCraft</text>
-  <text x="50" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="500" fill="#64748B">Convert visitors into customers with beautiful testimonial widgets</text>
+  <text x="50" y="45" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#64748B">Convert Visitors Into Customers</text>
 </svg>
