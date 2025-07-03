@@ -101,9 +101,11 @@ A beautiful, responsive testimonial carousel widget generator that helps small b
    
    ```
    STRIPE_SECRET_KEY=sk_live_your_live_stripe_secret_key
-   PRICE_ID_LIFETIME=price_your_live_stripe_price_id
+   PRICE_ID_LIFETIME=price_1RgpDVA3gGBV3QMFxqw2qL3j
    VITE_STRIPE_PUBLISHABLE_KEY=pk_live_your_live_stripe_publishable_key
    ```
+   
+   **Note:** The Price ID `price_1RgpDVA3gGBV3QMFxqw2qL3j` is already configured for your $9.99 product.
 
 ### Stripe Configuration
 
