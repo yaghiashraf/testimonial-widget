@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { shouldShowUpgradeButton } from '../lib/userFlags'
 
 interface HeaderProps {
   isPaid: boolean
@@ -10,8 +11,13 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ isPaid, onUpgrade, isUpgrading }) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [showUpgrade, setShowUpgrade] = useState(false)
   const location = useLocation()
   const isHomePage = location.pathname === '/'
+
+  useEffect(() => {
+    setShowUpgrade(shouldShowUpgradeButton())
+  }, [isPaid])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ isPaid, onUpgrade, isUpgrading }) => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Link to="/">
-              <img src="/logo.svg" alt="TestimonialCraft" className="h-12 w-auto hover:opacity-80 transition-opacity" />
+              <img src="/logo.svg" alt="TestimonialCraft" className="h-24 w-auto hover:opacity-80 transition-opacity" />
             </Link>
           </div>
 
@@ -120,7 +126,7 @@ const Header: React.FC<HeaderProps> = ({ isPaid, onUpgrade, isUpgrading }) => {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            {!isPaid ? (
+            {showUpgrade && !isPaid ? (
               <button
                 onClick={onUpgrade}
                 disabled={isUpgrading}
@@ -221,7 +227,7 @@ const Header: React.FC<HeaderProps> = ({ isPaid, onUpgrade, isUpgrading }) => {
 
               {/* Mobile CTA */}
               <div className="pt-4 border-t border-gray-700/50">
-                {!isPaid ? (
+                {showUpgrade && !isPaid ? (
                   <button
                     onClick={() => {
                       setIsMenuOpen(false)

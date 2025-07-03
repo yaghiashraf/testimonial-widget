@@ -146,7 +146,7 @@ const PrivacyPolicy: React.FC = () => {
             <div className="text-gray-300 space-y-2">
               <p>If you have any questions about this Privacy Policy, please contact us:</p>
               <p>📧 Email: <a href="mailto:privacy@testimonialcraft.com" className="text-blue-400 hover:text-blue-300">privacy@testimonialcraft.com</a></p>
-              <p>📍 Address: TestimonialCraft Privacy Team, [Your Business Address]</p>
+              <p>📧 Support: <a href="mailto:support@testimonialcraft.com" className="text-blue-400 hover:text-blue-300">support@testimonialcraft.com</a></p>
               <p>📞 Response Time: Within 48 hours for privacy-related inquiries</p>
             </div>
           </section>

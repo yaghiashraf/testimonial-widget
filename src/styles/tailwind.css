@@ -2,30 +2,97 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom CSS Gradients for better performance */
 @layer base {
+  :root {
+    --gradient-primary: radial-gradient(ellipse at top, rgba(59,130,246,0.15), transparent);
+    --gradient-secondary: radial-gradient(ellipse at bottom, rgba(139,92,246,0.15), transparent);
+    --gradient-hero: linear-gradient(135deg, #1f2937 0%, #111827 50%, #0f172a 100%);
+  }
+  
   html {
     @apply scroll-smooth;
   }
   
   body {
     @apply font-sans antialiased;
+    background: var(--gradient-hero);
+    background-attachment: fixed;
   }
 }
 
 @layer components {
+  .input-field {
+    @apply w-full bg-gray-800/50 border border-gray-600 focus:border-blue-500 text-white rounded-xl px-4 py-3 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 placeholder-gray-500;
+  }
+  
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg;
   }
   
   .btn-secondary {
-    @apply bg-gray-700 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+    @apply bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200;
   }
   
-  .input-field {
-    @apply bg-gray-800 border border-gray-700 text-white rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  .card {
+    @apply bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl shadow-2xl;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent;
   }
   
   .testimonial-card {
     @apply bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700;
   }
+}
+
+@layer utilities {
+  .text-cyan-400 {
+    color: #22d3ee !important; /* Improved contrast */
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  
+  .backdrop-blur-custom {
+    backdrop-filter: blur(16px) saturate(180%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2563eb, #7c3aed);
+}
+
+/* Focus visible for accessibility */
+.focus\:ring-2:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* Animation for loading states */
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.loading-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
 }

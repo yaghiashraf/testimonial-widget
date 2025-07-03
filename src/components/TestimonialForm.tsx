@@ -218,13 +218,39 @@ const TestimonialForm: React.FC<TestimonialFormProps> = ({
                     <span>Profile Photo (optional)</span>
                   </span>
                 </label>
-                <input
-                  type="url"
-                  value={testimonial.photoUrl || ''}
-                  onChange={e => updateTestimonial(testimonial.id, { photoUrl: e.target.value })}
-                  placeholder="https://example.com/customer-photo.jpg"
-                  className="w-full bg-gray-800/50 border border-gray-600 focus:border-green-500 text-white rounded-xl px-4 py-3 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500/20 placeholder-gray-500"
-                />
+                <div className="space-y-3">
+                  <input
+                    type="url"
+                    value={testimonial.photoUrl || ''}
+                    onChange={e => updateTestimonial(testimonial.id, { photoUrl: e.target.value })}
+                    placeholder="https://example.com/customer-photo.jpg or drag & drop image"
+                    className="w-full bg-gray-800/50 border border-gray-600 focus:border-green-500 text-white rounded-xl px-4 py-3 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500/20 placeholder-gray-500"
+                  />
+                  <div className="text-center">
+                    <label className="inline-flex items-center space-x-2 bg-green-600/20 border border-green-600/50 hover:border-green-500 text-green-300 px-4 py-2 rounded-lg cursor-pointer transition-all duration-200">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-sm">Upload Image</span>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={(e) => {
+                          const file = e.target.files?.[0]
+                          if (file) {
+                            // For demo purposes, we'll create a data URL
+                            const reader = new FileReader()
+                            reader.onload = (event) => {
+                              updateTestimonial(testimonial.id, { photoUrl: event.target?.result as string })
+                            }
+                            reader.readAsDataURL(file)
+                          }
+                        }}
+                      />
+                    </label>
+                  </div>
+                </div>
                 {testimonial.photoUrl && (
                   <div className="mt-3">
                     <img
@@ -232,7 +258,8 @@ const TestimonialForm: React.FC<TestimonialFormProps> = ({
                       alt="Preview"
                       className="w-12 h-12 rounded-full object-cover border-2 border-green-500"
                       onError={(e) => {
-                        e.currentTarget.style.display = 'none'
+                        const target = e.target as HTMLImageElement
+                        target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.author || 'User')}&background=10B981&color=ffffff&size=48`
                       }}
                     />
                   </div>

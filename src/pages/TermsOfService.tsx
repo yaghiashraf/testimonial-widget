@@ -213,7 +213,7 @@ const TermsOfService: React.FC = () => {
               <p>If you have questions about these Terms of Service, please contact us:</p>
               <p>📧 Email: <a href="mailto:legal@testimonialcraft.com" className="text-blue-400 hover:text-blue-300">legal@testimonialcraft.com</a></p>
               <p>🎫 Support: <a href="mailto:support@testimonialcraft.com" className="text-blue-400 hover:text-blue-300">support@testimonialcraft.com</a></p>
-              <p>📍 Address: TestimonialCraft Legal Team, [Your Business Address]</p>
+              <p>📧 Email: <a href="mailto:support@testimonialcraft.com" className="text-blue-400 hover:text-blue-300">support@testimonialcraft.com</a></p>
             </div>
           </section>
         </div>

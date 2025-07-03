@@ -6,6 +6,7 @@ import About from './pages/About'
 import FAQ from './pages/FAQ'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
+import WidgetBuilder from './pages/WidgetBuilder'
 
 /**
  * Main application component with routing
@@ -21,6 +22,7 @@ function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/builder" element={<WidgetBuilder />} />
       </Routes>
     </div>
   )

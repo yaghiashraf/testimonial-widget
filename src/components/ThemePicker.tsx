@@ -76,7 +76,7 @@ const ThemePicker: React.FC<ThemePickerProps> = ({ theme, onThemeChange, isPaid 
           </div>
           
           {!isPaid && (
-            <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 border border-purple-700/50 rounded-xl p-4 mb-6">
+            <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 border border-purple-700/50 rounded-xl p-4 mb-6 hover:shadow-[0_0_8px_theme('colors.purple.500')] transition-all duration-300 cursor-pointer">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
                   <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">

@@ -13,7 +13,7 @@ const ExamplesSection: React.FC = () => {
           text: "This store has the best customer service! My order arrived quickly and the quality exceeded my expectations.",
           author: "Sarah Johnson",
           rating: 5,
-          photoUrl: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=64&h=64&fit=crop&crop=face"
+          photoUrl: "https://images.unsplash.com/photo-1494790108755-2616b35bf1c2?w=64&h=64&fit=crop&crop=face"
         },
         {
           text: "Amazing products and lightning-fast shipping. I'll definitely be ordering again!",
@@ -194,6 +194,10 @@ const ExamplesSection: React.FC = () => {
                       alt={currentExample.testimonials[0].author}
                       className="w-16 h-16 rounded-full object-cover border-2"
                       style={{ borderColor: currentExample.theme.primaryColor }}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement
+                        target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(currentExample.testimonials[0].author)}&background=3B82F6&color=ffffff&size=64`
+                      }}
                     />
                   </div>
 

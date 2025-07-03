@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://testimonialcraft.com/sitemap.xml
+
+# Disallow admin or private areas
+Disallow: /admin/
+Disallow: /.netlify/

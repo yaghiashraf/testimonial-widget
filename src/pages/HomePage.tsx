@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react'
 import Header from '../components/Header'
-import HeroSection from '../components/HeroSection'
-import FeaturesSection from '../components/FeaturesSection'
-import PricingSection from '../components/PricingSection'
-import ExamplesSection from '../components/ExamplesSection'
+import Hero from '../sections/Hero'
+import Features from '../sections/Features'
+import Pricing from '../sections/Pricing'
+import PricingTable from '../sections/PricingTable'
+import Examples from '../sections/Examples'
 import TestimonialBuilder from '../components/TestimonialBuilder'
 import Footer from '../components/Footer'
+import CookieBanner from '../components/CookieBanner'
 import { createCheckoutSession } from '../lib/stripe'
 import { enforceHTTPS, auditLog } from '../lib/security'
+import { setUserFlag } from '../lib/userFlags'
 
 const HomePage: React.FC = () => {
   const [isPaid, setIsPaid] = useState(false)
@@ -42,6 +45,7 @@ const HomePage: React.FC = () => {
 
   const handleGetStarted = () => {
     setShowBuilder(true)
+    setUserFlag('visitedBuilder', true)
     // Scroll to builder section
     setTimeout(() => {
       document.getElementById('builder')?.scrollIntoView({ behavior: 'smooth' })
@@ -56,28 +60,27 @@ const HomePage: React.FC = () => {
         isUpgrading={isUpgrading}
       />
       
-      <HeroSection 
-        onGetStarted={handleGetStarted}
-        onUpgrade={handleUpgrade}
-        isPaid={isPaid}
-        isUpgrading={isUpgrading}
-      />
+      <Hero onGetStarted={handleGetStarted} />
       
-      <FeaturesSection />
+      <Features />
       
-      <PricingSection 
+      <Pricing 
         onUpgrade={handleUpgrade}
         isUpgrading={isUpgrading}
         isPaid={isPaid}
       />
       
-      <ExamplesSection />
+      <PricingTable />
+      
+      <Examples />
       
       {(showBuilder || isPaid) && (
         <TestimonialBuilder scrollToBuilder={showBuilder && !isPaid} />
       )}
       
       <Footer />
+      
+      <CookieBanner />
     </div>
   )
 }
