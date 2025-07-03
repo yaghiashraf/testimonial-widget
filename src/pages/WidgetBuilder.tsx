@@ -80,10 +80,6 @@ const WidgetBuilder: React.FC = () => {
     }
   }
 
-  const generateCode = () => {
-    setCurrentStep(3)
-    setShowSnippet(true)
-  }
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
