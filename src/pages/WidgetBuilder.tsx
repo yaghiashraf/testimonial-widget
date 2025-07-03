@@ -91,7 +91,7 @@ const WidgetBuilder: React.FC = () => {
       
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/20">
-        <div className="container mx-auto px-3">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
@@ -113,7 +113,7 @@ const WidgetBuilder: React.FC = () => {
 
       {/* Builder Content */}
       <section className="py-16">
-        <div className="container mx-auto px-3">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
             {/* Left Column - Forms */}
             <div className="space-y-8">

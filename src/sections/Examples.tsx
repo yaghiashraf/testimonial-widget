@@ -1,6 +1,10 @@
 import { useState } from 'react'
 
-const Examples: React.FC = () => {
+interface ExamplesProps {
+  onGetStarted?: () => void
+}
+
+const Examples: React.FC<ExamplesProps> = ({ onGetStarted }) => {
   const [activeTab, setActiveTab] = useState(0)
 
   const examples = [
@@ -84,7 +88,7 @@ const Examples: React.FC = () => {
 
   return (
     <section id="examples" className="py-20 bg-gray-900">
-      <div className="container mx-auto px-3">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -192,7 +196,7 @@ const Examples: React.FC = () => {
             Ready to create your own testimonial widget?
           </p>
           <button 
-            onClick={() => document.getElementById('builder')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={onGetStarted || (() => document.getElementById('builder')?.scrollIntoView({ behavior: 'smooth' }))}
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl"
           >
             Start Building Your Widget

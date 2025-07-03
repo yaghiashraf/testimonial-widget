@@ -15,7 +15,7 @@ const Pricing: React.FC<PricingProps> = ({ onUpgrade, isUpgrading, isPaid }) => 
 
   return (
     <section id="pricing" className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
-      <div className="container mx-auto px-3">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 bg-blue-900/30 border border-blue-700/50 px-4 py-2 rounded-full mb-6">

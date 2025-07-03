@@ -8,6 +8,21 @@ const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || 
  */
 export const createCheckoutSession = async (): Promise<void> => {
   try {
+    // Check if we're in development and Stripe keys are missing
+    const isDev = import.meta.env.DEV
+    const hasStripeKey = !!import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY
+    
+    if (isDev && !hasStripeKey) {
+      // Show demo mode alert for development
+      alert('Demo Mode: Stripe is not configured.\n\nIn production, set these environment variables:\n- VITE_STRIPE_PUBLISHABLE_KEY\n- STRIPE_SECRET_KEY\n- PRICE_ID_LIFETIME')
+      
+      // Simulate successful upgrade for demo purposes
+      localStorage.setItem('paid', 'true')
+      localStorage.setItem('paymentDate', new Date().toISOString())
+      window.location.reload()
+      return
+    }
+
     const response = await fetch('/.netlify/functions/createCheckout', {
       method: 'POST',
       headers: {
@@ -21,7 +36,7 @@ export const createCheckoutSession = async (): Promise<void> => {
       console.error('Checkout session creation failed:', errorData)
       
       if (response.status === 500 && errorData.message?.includes('not configured')) {
-        throw new Error('Payment system is not configured. Please contact support.')
+        throw new Error('Payment system is not configured. Please contact support at support@testimonialcraft.com')
       }
       
       throw new Error(errorData.error || 'Failed to create checkout session')

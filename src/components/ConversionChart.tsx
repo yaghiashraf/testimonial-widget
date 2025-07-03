@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react'
 
 interface ConversionChartProps {
   className?: string
+  onGetStarted?: () => void
 }
 
 /**
  * Dynamic conversion chart showing the impact of testimonials on trust and conversions
  */
-const ConversionChart: React.FC<ConversionChartProps> = ({ className = '' }) => {
+const ConversionChart: React.FC<ConversionChartProps> = ({ className = '', onGetStarted }) => {
   const [animateIn, setAnimateIn] = useState(false)
   const [currentMetric, setCurrentMetric] = useState(0)
 
@@ -101,7 +102,7 @@ const ConversionChart: React.FC<ConversionChartProps> = ({ className = '' }) => 
 
   return (
     <section className={`py-16 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 ${className}`}>
-      <div className="container mx-auto px-3 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-6xl">
         {/* Section Header */}
         <div className={`text-center mb-12 transform transition-all duration-1000 ${
           animateIn ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
@@ -232,7 +233,7 @@ const ConversionChart: React.FC<ConversionChartProps> = ({ className = '' }) => 
               Join thousands of businesses using TestimonialCraft to convert more visitors into customers.
             </p>
             <button
-              onClick={() => document.getElementById('builder')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={onGetStarted || (() => document.getElementById('builder')?.scrollIntoView({ behavior: 'smooth' }))}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105"
             >
               Start Building Your Widget

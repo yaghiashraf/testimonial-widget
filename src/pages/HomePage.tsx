@@ -73,9 +73,9 @@ const HomePage: React.FC = () => {
       
       <PricingTable />
       
-      <Examples />
+      <Examples onGetStarted={handleGetStarted} />
       
-      <ConversionChart />
+      <ConversionChart onGetStarted={handleGetStarted} />
       
       {(showBuilder || isPaid) && (
         <TestimonialBuilder scrollToBuilder={showBuilder && !isPaid} />

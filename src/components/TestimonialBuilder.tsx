@@ -68,7 +68,7 @@ const TestimonialBuilder: React.FC<TestimonialBuilderProps> = ({ scrollToBuilder
 
   return (
     <section ref={builderRef} id="builder" className="py-20 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800">
-      <div className="container mx-auto px-3 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl">
         {/* Section Header */}
         <div className={`text-center mb-16 transform transition-all duration-1000 ${
           animateIn ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
