@@ -1,7 +1,7 @@
 const TermsOfService: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
+      <div className="container mx-auto px-3 py-16 max-w-4xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Terms of Service
@@ -44,13 +44,13 @@ const TermsOfService: React.FC = () => {
             <ul className="text-gray-300 space-y-2 mb-6">
               <li>• No account creation required</li>
               <li>• Data stored locally in your browser</li>
-              <li>• Limited to 3 testimonials and 1 theme</li>
+              <li>• Limited to 1 testimonial and 1 theme</li>
               <li>• "Powered by TestimonialCraft" attribution required</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-blue-400 mb-3">Paid Users</h3>
             <ul className="text-gray-300 space-y-2 mb-6">
-              <li>• One-time payment of $15 for lifetime access</li>
+              <li>• One-time payment of $9.99 for lifetime access</li>
               <li>• Unlimited testimonials and all themes</li>
               <li>• Attribution removal allowed</li>
               <li>• Priority email support</li>
@@ -99,7 +99,7 @@ const TermsOfService: React.FC = () => {
             <div className="space-y-4 text-gray-300">
               <p>
                 <strong className="text-white">Pricing:</strong> The premium tier is available for a 
-                one-time payment of $15 USD, providing lifetime access to all premium features.
+                one-time payment of $9.99 USD, providing lifetime access to all premium features.
               </p>
               <p>
                 <strong className="text-white">Payment Processing:</strong> All payments are processed 

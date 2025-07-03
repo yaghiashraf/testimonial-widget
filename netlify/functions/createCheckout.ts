@@ -61,6 +61,7 @@ export const handler: Handler = async (event, context) => {
       cancel_url: `${origin}/cancel`,
       metadata: {
         product: 'testimonial-widget-lifetime',
+        price: '9.99',
       },
       allow_promotion_codes: true,
       billing_address_collection: 'auto',

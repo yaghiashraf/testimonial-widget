@@ -15,7 +15,7 @@ const Pricing: React.FC<PricingProps> = ({ onUpgrade, isUpgrading, isPaid }) => 
 
   return (
     <section id="pricing" className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-3">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 bg-blue-900/30 border border-blue-700/50 px-4 py-2 rounded-full mb-6">
@@ -44,7 +44,7 @@ const Pricing: React.FC<PricingProps> = ({ onUpgrade, isUpgrading, isPaid }) => 
         {/* Pricing Cards */}
         <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
           {/* Free Plan */}
-          <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl p-8">
+          <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl p-8 flex flex-col justify-between min-h-[400px]">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-white mb-2">Free Forever</h3>
               <div className="text-4xl font-bold text-gray-300 mb-2">$0</div>
@@ -56,7 +56,7 @@ const Pricing: React.FC<PricingProps> = ({ onUpgrade, isUpgrading, isPaid }) => 
                 <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-gray-300">Up to 3 testimonials</span>
+                <span className="text-gray-300">1 testimonial</span>
               </div>
               <div className="flex items-center space-x-3">
                 <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -98,11 +98,11 @@ const Pricing: React.FC<PricingProps> = ({ onUpgrade, isUpgrading, isPaid }) => 
             {/* Glow effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl blur-xl scale-105" />
             
-            <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-2 border-blue-500/50 rounded-2xl p-8 mt-4">
+            <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-2 border-blue-500/50 rounded-2xl p-8 mt-4 flex flex-col justify-between min-h-[400px]">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-white mb-2">Pro Lifetime</h3>
                 <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
-                  $15
+                  $9.99
                 </div>
                 <p className="text-gray-400">One-time payment, lifetime access</p>
               </div>

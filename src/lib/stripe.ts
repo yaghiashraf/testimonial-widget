@@ -17,7 +17,14 @@ export const createCheckoutSession = async (): Promise<void> => {
     })
 
     if (!response.ok) {
-      throw new Error('Failed to create checkout session')
+      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }))
+      console.error('Checkout session creation failed:', errorData)
+      
+      if (response.status === 500 && errorData.message?.includes('not configured')) {
+        throw new Error('Payment system is not configured. Please contact support.')
+      }
+      
+      throw new Error(errorData.error || 'Failed to create checkout session')
     }
 
     const { url } = await response.json()

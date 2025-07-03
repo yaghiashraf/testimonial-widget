@@ -6,6 +6,7 @@ import Pricing from '../sections/Pricing'
 import PricingTable from '../sections/PricingTable'
 import Examples from '../sections/Examples'
 import TestimonialBuilder from '../components/TestimonialBuilder'
+import ConversionChart from '../components/ConversionChart'
 import Footer from '../components/Footer'
 import CookieBanner from '../components/CookieBanner'
 import { createCheckoutSession } from '../lib/stripe'
@@ -46,10 +47,10 @@ const HomePage: React.FC = () => {
   const handleGetStarted = () => {
     setShowBuilder(true)
     setUserFlag('visitedBuilder', true)
-    // Scroll to builder section
+    // Scroll to builder section with more delay to ensure component is rendered
     setTimeout(() => {
       document.getElementById('builder')?.scrollIntoView({ behavior: 'smooth' })
-    }, 100)
+    }, 300)
   }
 
   return (
@@ -73,6 +74,8 @@ const HomePage: React.FC = () => {
       <PricingTable />
       
       <Examples />
+      
+      <ConversionChart />
       
       {(showBuilder || isPaid) && (
         <TestimonialBuilder scrollToBuilder={showBuilder && !isPaid} />

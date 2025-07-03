@@ -63,12 +63,12 @@ const TestimonialBuilder: React.FC<TestimonialBuilderProps> = ({ scrollToBuilder
     }
   }
 
-  const canAddMoreTestimonials = isPaid || testimonials.length < 3
-  const shouldShowUpgradePrompt = !isPaid && testimonials.length >= 3
+  const canAddMoreTestimonials = isPaid || testimonials.length < 1
+  const shouldShowUpgradePrompt = !isPaid && testimonials.length >= 1
 
   return (
     <section ref={builderRef} id="builder" className="py-20 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-3 max-w-7xl">
         {/* Section Header */}
         <div className={`text-center mb-16 transform transition-all duration-1000 ${
           animateIn ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
@@ -99,7 +99,7 @@ const TestimonialBuilder: React.FC<TestimonialBuilderProps> = ({ scrollToBuilder
                 <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-blue-300 font-medium">Free: 3 testimonials</span>
+                <span className="text-blue-300 font-medium">Free: 1 testimonial</span>
               </div>
               <div className="w-px h-6 bg-gray-600" />
               <button 
@@ -199,7 +199,7 @@ const TestimonialBuilder: React.FC<TestimonialBuilderProps> = ({ scrollToBuilder
                             <span>Processing...</span>
                           </div>
                         ) : (
-                          'Upgrade Now - $15 Lifetime'
+                          'Upgrade Now - $9.99 Lifetime'
                         )}
                       </button>
                       
@@ -212,24 +212,6 @@ const TestimonialBuilder: React.FC<TestimonialBuilderProps> = ({ scrollToBuilder
               </div>
             )}
 
-            {testimonials.length > 0 && !shouldShowUpgradePrompt && (
-              <div className="text-center">
-                <button
-                  onClick={() => setShowSnippetModal(true)}
-                  className="group bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
-                >
-                  <span className="flex items-center justify-center space-x-2">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
-                    </svg>
-                    <span>Generate Widget Code</span>
-                    <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-            )}
           </div>
         </div>
       </div>

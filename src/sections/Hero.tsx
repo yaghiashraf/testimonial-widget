@@ -37,7 +37,7 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
         <div className="absolute bottom-20 right-10 w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
       </div>
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-3 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className={`space-y-8 transform transition-all duration-1000 ${
@@ -47,7 +47,7 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
             <div className="inline-flex items-center space-x-2 bg-blue-900/30 border border-blue-700/50 px-4 py-2 rounded-full">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               <span className="text-blue-300 text-sm font-medium">
-                Trusted by small businesses in 🇺🇸 USA, 🇬🇧 UK & 🇩🇪 EU
+                Trusted by small businesses in 🇺🇸 USA, 🇬🇧 UK & 🇪🇺 EU
               </span>
             </div>
 

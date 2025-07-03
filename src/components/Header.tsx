@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ isPaid, onUpgrade, isUpgrading }) => {
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-3 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">

@@ -18,11 +18,11 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Can I customize the appearance to match my brand?",
-      answer: "Yes! Free users get 1 beautiful theme with customizable font sizes. Premium users ($15 one-time) get access to 8+ themes plus custom color options to perfectly match your brand colors and style."
+      answer: "Yes! Free users get 1 beautiful theme with customizable font sizes. Premium users ($9.99 one-time) get access to 8+ themes plus custom color options to perfectly match your brand colors and style."
     },
     {
       question: "What's the difference between the free and paid versions?",
-      answer: "Free users can create widgets with up to 3 testimonials using 1 theme with 'Powered by TestimonialCraft' attribution. Premium users ($15 one-time payment) get unlimited testimonials, 8+ themes, custom colors, branding removal, and priority email support."
+      answer: "Free users can create widgets with up to 1 testimonial using 1 theme with 'Powered by TestimonialCraft' attribution. Premium users ($9.99 one-time payment) get unlimited testimonials, 8+ themes, custom colors, branding removal, and priority email support."
     },
     {
       question: "How do I add testimonials to my widget?",
@@ -34,7 +34,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Can I remove the 'Powered by TestimonialCraft' branding?",
-      answer: "Yes, but only with the premium version ($15 one-time payment). This helps support the free version for other users while giving premium users a completely white-labeled solution."
+      answer: "Yes, but only with the premium version ($9.99 one-time payment). This helps support the free version for other users while giving premium users a completely white-labeled solution."
     },
     {
       question: "Is TestimonialCraft GDPR compliant and secure?",
@@ -48,7 +48,7 @@ const FAQ: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
+      <div className="container mx-auto px-3 py-16 max-w-4xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Frequently Asked Questions

@@ -1,7 +1,7 @@
 const About: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
+      <div className="container mx-auto px-3 py-16 max-w-4xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             About TestimonialCraft
@@ -62,7 +62,7 @@ const About: React.FC = () => {
                 <div className="border-l-4 border-green-500 pl-4">
                   <h3 className="text-lg font-semibold text-green-400 mb-2">💰 Fair Pricing</h3>
                   <p className="text-gray-300 text-sm">
-                    One-time $15 payment for lifetime access. No subscriptions, no hidden fees, 
+                    One-time $9.99 payment for lifetime access. No subscriptions, no hidden fees, 
                     no price increases. Ever.
                   </p>
                 </div>

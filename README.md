@@ -7,14 +7,14 @@ A beautiful, responsive testimonial carousel widget generator that helps small b
 ## Features
 
 ### Free Tier
-- ✅ Up to 3 testimonials
+- ✅ Up to 1 testimonial
 - ✅ Basic blue color theme
 - ✅ Responsive carousel with auto-rotation
 - ✅ Touch/swipe support
 - ✅ Keyboard navigation
 - ✅ WCAG accessibility compliant
 
-### Lifetime Upgrade ($15)
+### Lifetime Upgrade ($9.99)
 - 🚀 Unlimited testimonials
 - 🎨 All color themes + custom colors
 - 🏷️ Remove "Powered by" badge
