@@ -42,7 +42,7 @@ const Pricing: React.FC<PricingProps> = ({ onUpgrade, isUpgrading, isPaid }) => 
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16 pt-6">
           {/* Free Plan */}
           <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl p-8 flex flex-col justify-between min-h-[400px]">
             <div className="text-center mb-8">
@@ -98,7 +98,7 @@ const Pricing: React.FC<PricingProps> = ({ onUpgrade, isUpgrading, isPaid }) => 
             {/* Glow effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl blur-xl scale-105" />
             
-            <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-2 border-blue-500/50 rounded-2xl p-8 mt-4 flex flex-col justify-between min-h-[400px]">
+            <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-2 border-blue-500/50 rounded-2xl p-8 flex flex-col justify-between min-h-[400px]">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-white mb-2">Pro Lifetime</h3>
                 <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">

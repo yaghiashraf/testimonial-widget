@@ -39,16 +39,29 @@ A beautiful, responsive testimonial carousel widget generator that helps small b
    npm install
    ```
 
-3. **Set up environment variables**
+3. **Set up Stripe integration (for payment processing)**
+   
+   **Create Stripe Account & Get Keys:**
+   - Sign up at [Stripe Dashboard](https://dashboard.stripe.com/)
+   - Go to **Developers > API keys**
+   - Copy your **Publishable key** (pk_test_...) and **Secret key** (sk_test_...)
+   
+   **Create Product in Stripe:**
+   - Go to **Products > Add Product**
+   - Name: "TestimonialCraft Pro Lifetime"
+   - Price: $9.99 USD (one-time payment)
+   - Copy the **Price ID** (price_...)
+   
+   **Configure Environment Variables:**
    ```bash
    cp .env.example .env
    ```
    
-   Edit `.env` with your Stripe keys:
+   Edit `.env` with your actual Stripe keys:
    ```env
-   STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key_here
-   PRICE_ID_LIFETIME=price_your_stripe_price_id_here
-   VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key_here
+   VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_actual_publishable_key
+   STRIPE_SECRET_KEY=sk_test_your_actual_secret_key  
+   PRICE_ID_LIFETIME=price_your_actual_price_id
    ```
 
 4. **Start development server**

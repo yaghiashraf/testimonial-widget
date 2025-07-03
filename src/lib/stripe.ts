@@ -12,15 +12,29 @@ export const createCheckoutSession = async (): Promise<void> => {
     const isDev = import.meta.env.DEV
     const hasStripeKey = !!import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY
     
-    if (isDev && !hasStripeKey) {
-      // Show demo mode alert for development
-      alert('Demo Mode: Stripe is not configured.\n\nIn production, set these environment variables:\n- VITE_STRIPE_PUBLISHABLE_KEY\n- STRIPE_SECRET_KEY\n- PRICE_ID_LIFETIME')
-      
-      // Simulate successful upgrade for demo purposes
-      localStorage.setItem('paid', 'true')
-      localStorage.setItem('paymentDate', new Date().toISOString())
-      window.location.reload()
-      return
+    if (!hasStripeKey) {
+      if (isDev) {
+        // Show demo mode alert for development
+        const proceed = confirm(
+          '🚧 Demo Mode: Stripe is not configured.\n\n' +
+          'Would you like to simulate a successful upgrade?\n\n' +
+          'To enable real payments:\n' +
+          '1. Copy .env.example to .env\n' +
+          '2. Add your Stripe keys\n' +
+          '3. Create a $9.99 product in Stripe Dashboard'
+        )
+        
+        if (proceed) {
+          // Simulate successful upgrade for demo purposes
+          localStorage.setItem('paid', 'true')
+          localStorage.setItem('paymentDate', new Date().toISOString())
+          window.location.reload()
+        }
+        return
+      } else {
+        // Production error
+        throw new Error('Payment system is temporarily unavailable. Please contact support@testimonialcraft.com')
+      }
     }
 
     const response = await fetch('/.netlify/functions/createCheckout', {

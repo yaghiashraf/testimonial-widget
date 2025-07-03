@@ -63,13 +63,13 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
   const currentStepData = demoSteps[currentStep]
 
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-      <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden border border-gray-700">
+    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 z-50">
+      <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-2xl max-w-5xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-hidden border border-gray-700">
         {/* Header */}
-        <div className="flex justify-between items-center p-6 border-b border-gray-700">
+        <div className="flex justify-between items-center p-4 sm:p-6 border-b border-gray-700">
           <div>
-            <h2 className="text-2xl font-bold text-white">How TestimonialCraft Works</h2>
-            <p className="text-gray-400 text-sm mt-1">
+            <h2 className="text-xl sm:text-2xl font-bold text-white">How TestimonialCraft Works</h2>
+            <p className="text-gray-400 text-xs sm:text-sm mt-1">
               See how easy it is to create converting testimonial widgets
             </p>
           </div>
@@ -82,9 +82,9 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        <div className="grid lg:grid-cols-2 h-[70vh]">
+        <div className="grid lg:grid-cols-2 h-[60vh] sm:h-[65vh] lg:h-[70vh] overflow-auto">
           {/* Left Side - Step Information */}
-          <div className="p-8 space-y-6">
+          <div className="p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6">
             {/* Progress Bar */}
             <div className="space-y-3">
               <div className="flex justify-between items-center">
@@ -199,7 +199,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
           </div>
 
           {/* Right Side - Visual Demo */}
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 border-l border-gray-700">
+          <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 sm:p-6 lg:p-8 border-l border-gray-700">
             <div className="h-full flex items-center justify-center">
               {currentStep === 0 && (
                 <div className="w-full max-w-md animate-fade-in">
@@ -310,9 +310,9 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Footer */}
-        <div className="border-t border-gray-700 p-6 bg-gray-800/50">
-          <div className="flex justify-between items-center">
-            <div className="text-sm text-gray-400">
+        <div className="border-t border-gray-700 p-3 sm:p-4 lg:p-6 bg-gray-800/50">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0">
+            <div className="text-xs sm:text-sm text-gray-400 text-center sm:text-left">
               ⚡ Setup time: Under 2 minutes • 🔒 No coding required
             </div>
             <button
