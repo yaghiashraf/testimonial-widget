@@ -41,10 +41,10 @@ A beautiful, responsive testimonial carousel widget generator that helps small b
 
 3. **Set up Stripe integration (for payment processing)**
    
-   **Create Stripe Account & Get Keys:**
-   - Sign up at [Stripe Dashboard](https://dashboard.stripe.com/)
-   - Go to **Developers > API keys**
-   - Copy your **Publishable key** (pk_test_...) and **Secret key** (sk_test_...)
+   **Get Your Stripe Keys:**
+   - Go to [Your Stripe Dashboard](https://dashboard.stripe.com/b/acct_1RgpttI72bsf5O4d/apikeys)
+   - **Publishable key (already configured):** `pk_test_51RgptzRSFV6H2MDC9cBr0gwgnCmlLJh12SuCrUcQWkWboBuAr5WKtSLzmhNOV2KLE8kptT8DqlhAGDtiegJpVDt300FvcBeY5W`
+   - **Secret key:** Copy your test secret key (starts with `sk_test_`)
    
    **Create Product in Stripe:**
    - Go to **Products > Add Product**
@@ -62,9 +62,9 @@ A beautiful, responsive testimonial carousel widget generator that helps small b
    
    Edit `.env` with your actual Stripe keys:
    ```env
-   VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_actual_publishable_key
+   VITE_STRIPE_PUBLISHABLE_KEY=pk_test_51RgptzRSFV6H2MDC9cBr0gwgnCmlLJh12SuCrUcQWkWboBuAr5WKtSLzmhNOV2KLE8kptT8DqlhAGDtiegJpVDt300FvcBeY5W
    STRIPE_SECRET_KEY=sk_test_your_actual_secret_key  
-   PRICE_ID_LIFETIME=price_your_actual_price_id
+   PRICE_ID_LIFETIME=price_1RgpDVA3gGBV3QMFxqw2qL3j
    ```
 
 4. **Start development server**
@@ -100,9 +100,9 @@ A beautiful, responsive testimonial carousel widget generator that helps small b
    Go to your Netlify dashboard → Site settings → Environment variables and add:
    
    ```
-   STRIPE_SECRET_KEY=sk_live_your_live_stripe_secret_key
+   STRIPE_SECRET_KEY=sk_test_your_test_stripe_secret_key
    PRICE_ID_LIFETIME=price_1RgpDVA3gGBV3QMFxqw2qL3j
-   VITE_STRIPE_PUBLISHABLE_KEY=pk_live_your_live_stripe_publishable_key
+   VITE_STRIPE_PUBLISHABLE_KEY=pk_test_51RgptzRSFV6H2MDC9cBr0gwgnCmlLJh12SuCrUcQWkWboBuAr5WKtSLzmhNOV2KLE8kptT8DqlhAGDtiegJpVDt300FvcBeY5W
    ```
    
    **Note:** The Price ID `price_1RgpDVA3gGBV3QMFxqw2qL3j` is already configured for your $9.99 product.
