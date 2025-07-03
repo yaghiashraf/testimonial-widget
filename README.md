@@ -50,7 +50,10 @@ A beautiful, responsive testimonial carousel widget generator that helps small b
    - Go to **Products > Add Product**
    - Name: "TestimonialCraft Pro Lifetime"
    - Price: $9.99 USD (one-time payment)
-   - Copy the **Price ID** (price_...)
+   - After creation, click on your product
+   - Copy the **Price ID** (starts with price_...) NOT the Product ID
+   
+   **Note:** If you already have Product ID `prod_Sc3Kb4cSe52Bz3`, go to Products > Your Product > Pricing section to find the Price ID.
    
    **Configure Environment Variables:**
    ```bash
